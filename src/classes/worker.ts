@@ -200,6 +200,7 @@ export class Worker<
       name,
       {
         ...opts,
+        sharedConnection: isRedisInstance(opts.connection),
         blockingConnection: true,
       },
       Connection,

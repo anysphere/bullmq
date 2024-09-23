@@ -1,12 +1,7 @@
 import { EventEmitter } from 'events';
 import { QueueBaseOptions, RedisClient } from '../interfaces';
 import { MinimalQueue } from '../types';
-import {
-  delay,
-  DELAY_TIME_5,
-  isNotConnectionError,
-  isRedisInstance,
-} from '../utils';
+import { delay, DELAY_TIME_5, isNotConnectionError } from '../utils';
 import { RedisConnection } from './redis-connection';
 import { Job } from './job';
 import { KeysMap, QueueKeys } from './queue-keys';
@@ -59,7 +54,7 @@ export class QueueBase extends EventEmitter implements MinimalQueue {
 
     this.connection = new Connection(
       opts.connection,
-      isRedisInstance(opts?.connection),
+      opts.sharedConnection,
       opts.blockingConnection,
     );
 

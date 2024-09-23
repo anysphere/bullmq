@@ -4,7 +4,7 @@ import { Cluster, Redis } from 'ioredis';
 import { CONNECTION_CLOSED_ERROR_MSG } from 'ioredis/built/utils';
 import * as semver from 'semver';
 import { ChildMessage, RedisClient } from './interfaces';
-import * as EventEmitter from 'events';
+import { EventEmitter } from 'events';
 
 export const errorObject: { [index: string]: any } = { value: null };
 

@@ -38,7 +38,6 @@
     "generate:raw:scripts": "ts-node --project tsconfig-cjs.json generateRawScripts.ts",
     "lint": "./node_modules/.bin/eslint . --ignore-path ./.eslintignore",
     "lint:staged": "lint-staged",
-    "prepublishOnly": "yarn build",
     "prepare": "husky install",
     "pretest": "npm-run-all clean:scripts generate:raw:scripts transform:commands",
     "prettier": "prettier --config package.json src/**/*.ts",
